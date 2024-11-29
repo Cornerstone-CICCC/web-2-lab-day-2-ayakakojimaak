@@ -25,6 +25,7 @@ $(function () {
           </li>`;
       });
       $(".posts > ul").html(postContent);
+      // modal
     } else {
       $(".posts > ul").html("User has no posts");
     }
@@ -86,6 +87,7 @@ $(function () {
   };
 
   // add event listener
+  // page transition
   previousBtn.on("click", function () {
     const userId = getParams();
     const newId = userId === 1 ? 30 : userId - 1;
@@ -96,6 +98,16 @@ $(function () {
     const userId = getParams();
     const newId = userId === 30 ? 1 : userId + 1;
     setParams(newId);
+  });
+
+  // accordion
+  $(".posts > h3,.todos > h3").on("click", function () {
+    const target = $(this).next();
+    if (target.css("display") === "block") {
+      target.slideUp();
+    } else {
+      target.slideDown();
+    }
   });
 
   setDefault();
