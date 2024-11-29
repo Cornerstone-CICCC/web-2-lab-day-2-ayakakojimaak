@@ -3,9 +3,9 @@ $(function () {
     // user
     const infoContent = `
     <h1>${user.firstName} ${user.lastName}</h1>
-    <p>age: ${user.age}</p>
-    <p>email: ${user.email}</p>
-    <p>phone: ${user.phone}</p>
+    <p><strong>age:</strong> ${user.age}</p>
+    <p><strong>email:</strong> ${user.email}</p>
+    <p><strong>phone:</strong> ${user.phone}</p>
     `;
     $(".info__content").html(infoContent);
     $(".info__image > img").attr("src", user.image);
@@ -69,7 +69,7 @@ $(function () {
         console.log(data_json);
         $(".modal h1").html(data.title);
         $(".modal p").html(data.body);
-        $(".modal div").html(`View: ${data.views}`);
+        $(".modal div").html(`<i>View:</i> ${data.views}`);
         $(".overlay").fadeIn();
       })
       .fail(function () {
